@@ -1,5 +1,17 @@
+var datosTotales = [];
+var diasARepresentar = [];
+var infectadosARepresentar = [];
+var muertosARepresentar = [];
+var infectadosActualesARepresentar = [];
+var curadosARepresentar = [];
+var lineChartData = {};
+
 window.randomScalingFactor = function() {
 	return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+};
+
+window.onload = function() {
+    
 };
 
 
@@ -18,84 +30,116 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
+function getDias() {
+   datosTotales.forEach(x => diasARepresentar.push(x.dia)); 
+}
+
+function getInfectadosTotales() {
+    datosTotales.forEach(x => infectadosARepresentar.push(x.infectados));
+}
+
+function getMuertosARepresentar() {
+    datosTotales.forEach(x => muertosARepresentar.push(x.fallecidos));
+}
+
+function getInfectadosActualesARepresentar() {
+    datosTotales.forEach(x => infectadosActualesARepresentar.push(x.casosActivos));
+}
+
+function getCuradosARepresentar() {
+    datosTotales.forEach(x => curadosARepresentar.push(x.aumentoCurados));
+}
+
 window.getData = function() {
-    this.getJSON("js/data.json", function(err, data) {
+    this.getJSON("https://raw.githubusercontent.com/SergioMartinAlvaro/covid-spain-graphics/master/js/data.json", function(err, data) {
         if (err !== null) {
             alert('Something went wrong: ' + err);
           } else {
-            alert('Your query count: ' + data.query.count);
+            datosTotales = data;
+            getDias();
+            getInfectadosTotales();
+            getMuertosARepresentar();
+            getInfectadosActualesARepresentar();
+            getCuradosARepresentar();
+            initializeGraphics();
           }
     });
 }
 
-getData();
-
-var lineChartData = {
-    labels: ["13/03", "February", "March", "April", "May", "June", "July"],
-    datasets: [{
-        label: "My First dataset",
-        borderColor: "red",
-        backgroundColor: "red",
-        fill: false,
-        data: [
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor()
-        ],
-        yAxisID: "y-axis-1",
-    }, {
-        label: "My Second dataset",
-        borderColor: "blue",
-        backgroundColor: "blue",
-        fill: false,
-        data: [
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor()
-        ],
-        yAxisID: "y-axis-2"
-    }]
-};
-
-
-window.onload = function() {
-    var ctx = document.getElementById("canvas").getContext("2d");
-    window.myLine = Chart.Line(ctx, {
-        data: lineChartData,
+function initializeGraphics() {
+    config = {
+        type: 'line',
+        data: {
+            labels: diasARepresentar,
+            datasets: [{
+                label: 'Infectados Totales',
+                backgroundColor: "red",
+                borderColor: "red",
+                data: infectadosARepresentar,
+                fill: false,
+            }, {
+                label: 'Fallecidos',
+                fill: false,
+                backgroundColor: "black",
+                borderColor: "black",
+                data: muertosARepresentar,
+            }, {
+                label: 'Casos Activos',
+                fill: false,
+                backgroundColor: "blue",
+                borderColor: "blue",
+                data: infectadosActualesARepresentar,
+            },{
+                label: 'Curados',
+                fill: false,
+                backgroundColor: "green",
+                borderColor: "green",
+                data: curadosARepresentar,
+            }]
+        },
         options: {
             responsive: true,
-            hoverMode: 'index',
-            stacked: false,
-            title:{
+            title: {
                 display: true,
-                text:'Chart.js Line Chart - Multi Axis'
+                text: 'Gráfica lineal COVID-19 España'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
             },
             scales: {
-                yAxes: [{
-                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                xAxes: [{
                     display: true,
-                    position: "left",
-                    id: "y-axis-1",
-                }, {
-                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                    display: true,
-                    position: "right",
-                    id: "y-axis-2",
-
-                    // grid line settings
-                    gridLines: {
-                        drawOnChartArea: false, // only want the grid lines for one axis to show up
-                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Día'
+                    }
                 }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Casos'
+                    }
+                }]
             }
         }
-    });
-};
+    };
+        var ctx = document.getElementById('canvas').getContext('2d');
+        window.myLine = new Chart(ctx, config);
+
+
+}
+
+
+
+getData();
+
+
+
+
+
