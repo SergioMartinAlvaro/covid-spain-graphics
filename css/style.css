@@ -4,10 +4,12 @@ header,
 #intro,
 main {
     height: 100%;
+    overflow-x: hidden;
+
 }
 
 #nav {
-    position: fixed;
+    position: fixed!important;
     background-color: transparent!important;
 }
 
@@ -17,8 +19,14 @@ main {
     background-size: cover;
 }
 
-#title {
-    text-conte
+#graphics {
+    overflow-y: hidden;
+}
+
+canvas {
+    height: 95%!important;
+    width: 95%!important;
+
 }
 
 .margen {
