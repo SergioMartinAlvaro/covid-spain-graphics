@@ -47,7 +47,7 @@ function getInfectadosActualesARepresentar() {
 }
 
 function getCuradosARepresentar() {
-    datosTotales.forEach(x => curadosARepresentar.push(x.aumentoCurados));
+    datosTotales.forEach(x => curadosARepresentar.push(x.curados));
 }
 
 window.getData = function() {
