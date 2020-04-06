@@ -1,0 +1,27 @@
+html,
+body,
+header,
+#intro,
+main {
+    height: 100%;
+}
+
+#nav {
+    position: fixed;
+    background-color: transparent!important;
+}
+
+#intro {
+    background: url("../img/main.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#title {
+    text-conte
+}
+
+.margen {
+ margin-left: 5px;
+ margin-top: 10px;
+}
