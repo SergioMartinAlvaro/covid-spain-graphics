@@ -9,8 +9,7 @@ main {
 }
 
 #nav {
-    position: fixed!important;
-    background-color: transparent!important;
+
 }
 
 #intro {
@@ -24,8 +23,7 @@ main {
 }
 
 canvas {
-    height: 95%!important;
-    width: 95%!important;
+
 
 }
 
