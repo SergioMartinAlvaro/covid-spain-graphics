@@ -30,7 +30,7 @@
         "casosActivos": 10259,
         "aumentoCasosActivos": 47.9,
         "curados": 1028,
-        "aumentoCurados": 0
+        "aumentoCurados": 2.6
     },
     {
         "dia": "17/03",
@@ -41,7 +41,7 @@
         "casosActivos": 12037,
         "aumentoCasosActivos": 17.3,
         "curados": 1081,
-        "aumentoCurados": 0
+        "aumentoCurados": 94
     },
     {
         "dia": "18/03",
@@ -52,7 +52,7 @@
         "casosActivos": 16040,
         "aumentoCasosActivos": 33.2,
         "curados": 1107,
-        "aumentoCurados": 0
+        "aumentoCurados": 5.2
     },
     {
         "dia": "19/03",
@@ -63,7 +63,7 @@
         "casosActivos": 17393,
         "aumentoCasosActivos": 8.4,
         "curados": 1585,
-        "aumentoCurados": 0
+        "aumentoCurados": 2.45
     },
     {
         "dia": "20/03",
@@ -74,7 +74,7 @@
         "casosActivos": 21475,
         "aumentoCasosActivos": 23.5,
         "curados": 2125,
-        "aumentoCurados": 0
+        "aumentoCurados": 43.2
     },
     {
         "dia": "21/03",
@@ -85,7 +85,7 @@
         "casosActivos": 24277,
         "aumentoCasosActivos": 22.3,
         "curados": 2575,
-        "aumentoCurados": 0
+        "aumentoCurados": 34.1
     },
     {
         "dia": "22/03",
@@ -96,7 +96,7 @@
         "casosActivos": 27552,
         "aumentoCasosActivos": 13.5,
         "curados": 3355,
-        "aumentoCurados": 0
+        "aumentoCurados": 21.2
     },
     {
         "dia": "23/03",
@@ -107,7 +107,7 @@
         "casosActivos": 33183,
         "aumentoCasosActivos": 20.4,
         "curados": 3794,
-        "aumentoCurados": 0
+        "aumentoCurados": 30.3
     },
     {
         "dia": "24/03",
@@ -118,7 +118,7 @@
         "casosActivos": 38809,
         "aumentoCasosActivos": 16.9,
         "curados": 5367,
-        "aumentoCurados": 0
+        "aumentoCurados": 13.1
     },
     {
         "dia": "25/03",
@@ -129,7 +129,7 @@
         "casosActivos": 45084,
         "aumentoCasosActivos": 16.1,
         "curados": 7015,
-        "aumentoCurados": 0
+        "aumentoCurados": 41.5
     },
     {
         "dia": "26/03",
@@ -140,7 +140,7 @@
         "casosActivos": 49844,
         "aumentoCasosActivos": 10.5,
         "curados": 9357,
-        "aumentoCurados": 0
+        "aumentoCurados": 30.7
     },
     {
         "dia": "27/03",
@@ -151,7 +151,7 @@
         "casosActivos": 54273,
         "aumentoCasosActivos": 8.9,
         "curados": 12285,
-        "aumentoCurados": 0
+        "aumentoCurados": 33.4
     },
     {
         "dia": "28/03",
@@ -162,7 +162,7 @@
         "casosActivos": 57560,
         "aumentoCasosActivos": 6,
         "curados": 14709,
-        "aumentoCurados": 0
+        "aumentoCurados": 31.3
     },
     {
         "dia": "29/03",
@@ -173,7 +173,7 @@
         "casosActivos": 61075,
         "aumentoCasosActivos": 6.1,
         "curados": 16780,
-        "aumentoCurados": 0
+        "aumentoCurados": 14.8
     },
     {
         "dia": "30/03",
@@ -184,7 +184,7 @@
         "casosActivos": 66969,
         "aumentoCasosActivos": 9.6,
         "curados": 19259,
-        "aumentoCurados": 0
+        "aumentoCurados": 14.1
     },
     {
         "dia": "31/03",
@@ -195,7 +195,7 @@
         "casosActivos": 70436,
         "aumentoCasosActivos": 6,
         "curados": 22647,
-        "aumentoCurados": 0
+        "aumentoCurados": 14.8
     },
     {
         "dia": "01/04",
@@ -206,7 +206,7 @@
         "casosActivos": 73492,
         "aumentoCasosActivos": 5.7,
         "curados": 26743,
-        "aumentoCurados": 0
+        "aumentoCurados": 17.5
     },
     {
         "dia": "02/04",
@@ -217,7 +217,7 @@
         "casosActivos": 76262,
         "aumentoCasosActivos": 3.7,
         "curados": 30513,
-        "aumentoCurados": 0
+        "aumentoCurados": 18.1
     },
     {
         "dia": "03/04",
@@ -228,7 +228,7 @@
         "casosActivos": 78773,
         "aumentoCasosActivos": 3.2,
         "curados": 34219,
-        "aumentoCurados": 0
+        "aumentoCurados": 14.1
     },
     {
         "dia": "04/04",
@@ -239,7 +239,7 @@
         "casosActivos": 80261,
         "aumentoCasosActivos": 1.9,
         "curados": 38080,
-        "aumentoCurados": 0
+        "aumentoCurados": 12.1
     },
     {
         "dia": "05/04",
@@ -250,6 +250,17 @@
         "casosActivos": 81563,
         "aumentoCasosActivos": 1.6,
         "curados": 40437,
-        "aumentoCurados": 0
+        "aumentoCurados": 11.3
+    },
+    {
+        "dia": "06/04",
+        "infectados": 140510,
+        "aumentoInfectados": 4.1,
+        "fallecidos": 13798,
+        "aumentoFallecidos": 5.7,
+        "casosActivos": 83504,
+        "aumentoCasosActivos": 2.4,
+        "curados": 43208,
+        "aumentoCurados": 6.8
     }
 ]

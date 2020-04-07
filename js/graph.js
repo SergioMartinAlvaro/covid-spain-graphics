@@ -4,6 +4,10 @@ var infectadosARepresentar = [];
 var muertosARepresentar = [];
 var infectadosActualesARepresentar = [];
 var curadosARepresentar = [];
+var infectadosSubidaARepresentar = [];
+var casosActivosSubidaARepresentar = [];
+var curadosSubidaARepresentar = [];
+var muertosSubidaARepresentar = [];
 var lineChartData = {};
 
 window.randomScalingFactor = function() {
@@ -38,16 +42,32 @@ function getInfectadosTotales() {
     datosTotales.forEach(x => infectadosARepresentar.push(x.infectados));
 }
 
+function getInfectadosSubidaARepresentar() {
+    datosTotales.forEach(x => infectadosSubidaARepresentar.push(x.aumentoInfectados));
+}
+
 function getMuertosARepresentar() {
     datosTotales.forEach(x => muertosARepresentar.push(x.fallecidos));
+}
+
+function getMuertosSubidaARepresentar() {
+    datosTotales.forEach(x => muertosSubidaARepresentar.push(x.aumentoFallecidos));
 }
 
 function getInfectadosActualesARepresentar() {
     datosTotales.forEach(x => infectadosActualesARepresentar.push(x.casosActivos));
 }
 
+function getInfectadosActualesSubidaARepresentar() {
+    datosTotales.forEach(x => casosActivosSubidaARepresentar.push(x.aumentoCasosActivos));
+}
+
 function getCuradosARepresentar() {
     datosTotales.forEach(x => curadosARepresentar.push(x.curados));
+}
+
+function getCuradosSubidaARepresentar() {
+    datosTotales.forEach(x => curadosSubidaARepresentar.push(x.aumentoCurados));
 }
 
 window.getData = function() {
@@ -61,7 +81,12 @@ window.getData = function() {
             getMuertosARepresentar();
             getInfectadosActualesARepresentar();
             getCuradosARepresentar();
+            getInfectadosSubidaARepresentar();
+            getMuertosSubidaARepresentar();
+            getInfectadosActualesSubidaARepresentar();
+            getCuradosSubidaARepresentar();
             initializeGraphics();
+            initializeGraphicsPercent();
           }
     });
 }
@@ -131,6 +156,75 @@ function initializeGraphics() {
     };
         var ctx = document.getElementById('canvas').getContext('2d');
         window.myLine = new Chart(ctx, config);
+
+
+}
+
+function initializeGraphicsPercent() {
+    configPercent = {
+        type: 'line',
+        data: {
+            labels: diasARepresentar,
+            datasets: [{
+                label: 'Aumento Infectados Diario',
+                backgroundColor: "red",
+                borderColor: "red",
+                data: infectadosSubidaARepresentar,
+                fill: false,
+            }, {
+                label: 'Aumento Fallecidos Diario',
+                fill: false,
+                backgroundColor: "black",
+                borderColor: "black",
+                data: muertosSubidaARepresentar,
+            }, {
+                label: 'Aumento Casos Activos',
+                fill: false,
+                backgroundColor: "blue",
+                borderColor: "blue",
+                data: casosActivosSubidaARepresentar,
+            },{
+                label: 'Aumento Curados Diario',
+                fill: false,
+                backgroundColor: "green",
+                borderColor: "green",
+                data: curadosSubidaARepresentar,
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Gráfica percentil COVID-19 España'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Día'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Casos'
+                    }
+                }]
+            }
+        }
+    };
+        var ctxr = document.getElementById('canvas-percent').getContext('2d');
+        window.myLine = new Chart(ctxr, configPercent);
 
 
 }
