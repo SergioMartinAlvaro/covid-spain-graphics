@@ -1,3 +1,5 @@
+/* Arrays de valores que se utilizan para representar en las gráficas */
+
 var datosTotales = [];
 var diasARepresentar = [];
 var infectadosARepresentar = [];
@@ -8,16 +10,10 @@ var infectadosSubidaARepresentar = [];
 var casosActivosSubidaARepresentar = [];
 var curadosSubidaARepresentar = [];
 var muertosSubidaARepresentar = [];
-var lineChartData = {};
 
-window.randomScalingFactor = function() {
-	return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-};
 
-window.onload = function() {
-    
-};
 
+/* Función que extrae del fichero JSON los valores */
 
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -33,6 +29,8 @@ var getJSON = function(url, callback) {
     };
     xhr.send();
 };
+
+/* Funciones que rellenan los arrays de datos con los datos del objeto JSON */
 
 function getDias() {
    datosTotales.forEach(x => diasARepresentar.push(x.dia)); 
@@ -70,28 +68,21 @@ function getCuradosSubidaARepresentar() {
     datosTotales.forEach(x => curadosSubidaARepresentar.push(x.aumentoCurados));
 }
 
-window.getData = function() {
-    this.getJSON("https://raw.githubusercontent.com/SergioMartinAlvaro/covid-spain-graphics/master/js/data.json", function(err, data) {
-        if (err !== null) {
-            alert('Something went wrong: ' + err);
-          } else {
-            datosTotales = data;
-            getDias();
-            getInfectadosTotales();
-            getMuertosARepresentar();
-            getInfectadosActualesARepresentar();
-            getCuradosARepresentar();
-            getInfectadosSubidaARepresentar();
-            getMuertosSubidaARepresentar();
-            getInfectadosActualesSubidaARepresentar();
-            getCuradosSubidaARepresentar();
-            initializeGraphics();
-            initializeGraphicsPercent();
-          }
-    });
+function inicializarDatos() {
+    getDias();
+    getInfectadosTotales();
+    getMuertosARepresentar();
+    getInfectadosActualesARepresentar();
+    getCuradosARepresentar();
+    getInfectadosSubidaARepresentar();
+    getMuertosSubidaARepresentar();
+    getInfectadosActualesSubidaARepresentar();
+    getCuradosSubidaARepresentar();
 }
 
-function initializeGraphics() {
+/* Funciones que crean los gráficos */
+
+function initializeGraficoLineal() {
     config = {
         type: 'line',
         data: {
@@ -123,7 +114,8 @@ function initializeGraphics() {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
+            maintainAspectRatio: false,
             title: {
                 display: true,
                 text: 'Gráfica lineal COVID-19 España'
@@ -160,7 +152,7 @@ function initializeGraphics() {
 
 }
 
-function initializeGraphicsPercent() {
+function initializeGraficoPorcentual() {
     configPercent = {
         type: 'line',
         data: {
@@ -217,7 +209,7 @@ function initializeGraphicsPercent() {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Casos'
+                        labelString: 'Porcentaje'
                     }
                 }]
             }
@@ -229,9 +221,23 @@ function initializeGraphicsPercent() {
 
 }
 
+/* Función que muestra los datos obtenidos e inicializa los gráficos en pantalla */
+window.inicializarGraficas = function() {
+    this.getJSON("https://raw.githubusercontent.com/SergioMartinAlvaro/covid-spain-graphics/master/js/data.json", function(err, data) {
+        if (err !== null) {
+            alert('Something went wrong: ' + err);
+          } else {
+            datosTotales = data;
+            inicializarDatos();
+            initializeGraficoLineal();
+            initializeGraficoPorcentual();
+          }
+    });
+}
 
 
-getData();
+
+inicializarGraficas();
 
 
 
