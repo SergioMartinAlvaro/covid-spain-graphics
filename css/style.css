@@ -7,7 +7,8 @@ header,
 }
 
 #graphics,
-#graphics-percent {
+#graphics-percent,
+#graphics-round {
     height: 105%;
 }
 
@@ -38,7 +39,7 @@ canvas {
 @media (min-width: 1px) and (max-width: 320px) {
     #canvas {
         width: 280px!important;
-        max-height: 60&!important;
+        max-height: 60%!important;
     }
 }
 
