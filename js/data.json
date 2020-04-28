@@ -482,5 +482,16 @@
         "aumentoCasosActivos": -0.75,
         "curados": 100875,
         "aumentoCurados": 54.15
+    },
+    {
+        "dia": "26/04",
+        "infectados": 210773,
+        "aumentoInfectados": 0.63,
+        "fallecidos": 23822,
+        "aumentoFallecidos": 1.3,
+        "casosActivos": 84403,
+        "aumentoCasosActivos": -0.78,
+        "curados": 102548,
+        "aumentoCurados": 54.85
     }
 ]
