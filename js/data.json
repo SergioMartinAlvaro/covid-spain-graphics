@@ -493,5 +493,115 @@
         "aumentoCasosActivos": -0.78,
         "curados": 102548,
         "aumentoCurados": 54.85
+    },
+    {
+        "dia": "28/04",
+        "infectados": 212917,
+        "aumentoInfectados": 1.02,
+        "fallecidos": 24275,
+        "aumentoFallecidos": 1.91,
+        "casosActivos": 79695,
+        "aumentoCasosActivos": -5.58,
+        "curados": 108947,
+        "aumentoCurados": 57.75
+    },
+    {
+        "dia": "29/04",
+        "infectados": 213435,
+        "aumentoInfectados": 0.24,
+        "fallecidos": 24543,
+        "aumentoFallecidos": 1.10,
+        "casosActivos": 76842,
+        "aumentoCasosActivos": -3.58,
+        "curados": 112050,
+        "aumentoCurados": 59.31
+    },
+    {
+        "dia": "30/04",
+        "infectados": 215216,
+        "aumentoInfectados": 0.85,
+        "fallecidos": 224824,
+        "aumentoFallecidos": 1.14,
+        "casosActivos": 75717,
+        "aumentoCasosActivos": -1.46,
+        "curados": 114678,
+        "aumentoCurados": 60.23
+    },
+    {
+        "dia": "01/05",
+        "infectados": 216582,
+        "aumentoInfectados": 0.63,
+        "fallecidos": 25100,
+        "aumentoFallecidos": 1.11,
+        "casosActivos": 74234,
+        "aumentoCasosActivos": -1.95,
+        "curados": 117248,
+        "aumentoCurados": 61.23
+    },
+    {
+        "dia": "02/05",
+        "infectados": 217466,
+        "aumentoInfectados": 0.40,
+        "fallecidos": 25264,
+        "aumentoFallecidos": 0.65,
+        "casosActivos": 73300,
+        "aumentoCasosActivos": -1.25,
+        "curados": 118902,
+        "aumentoCurados": 61.86
+    },
+    {
+        "dia": "03/05",
+        "infectados": 218011,
+        "aumentoInfectados": 0.25,
+        "fallecidos": 25468,
+        "aumentoFallecidos": 0.65,
+        "casosActivos": 71243,
+        "aumentoCasosActivos": -2.80,
+        "curados": 121343,
+        "aumentoCurados": 63.00
+    },
+    {
+        "dia": "04/05",
+        "infectados": 219329,
+        "aumentoInfectados": -0.60,
+        "fallecidos": 25613,
+        "aumentoFallecidos": 0.56,
+        "casosActivos": 70230,
+        "aumentoCasosActivos": -1.42,
+        "curados": 123486,
+        "aumentoCurados": 63.74
+    },
+    {
+        "dia": "05/05",
+        "infectados": 220325,
+        "aumentoInfectados": -0.45,
+        "fallecidos": 25857,
+        "aumentoFallecidos": 0.95,
+        "casosActivos": 68466,
+        "aumentoCasosActivos": -2.5,
+        "curados": 126002,
+        "aumentoCurados": 64.79
+    },
+    {
+        "dia": "06/05",
+        "infectados": 221447,
+        "aumentoInfectados": 0.30,
+        "fallecidos": 26070,
+        "aumentoFallecidos": 0.72,
+        "casosActivos": 66866,
+        "aumentoCasosActivos": -2.33,
+        "curados": 128511,
+        "aumentoCurados": 65.77
+    },
+    {
+        "dia": "07/05",
+        "infectados": 222857,
+        "aumentoInfectados": 0.63,
+        "fallecidos": 26299,
+        "aumentoFallecidos": 0.87,
+        "casosActivos": 65410,
+        "aumentoCasosActivos": -2.17,
+        "curados": 13148,
+        "aumentoCurados": 66.72
     }
 ]
